@@ -1,0 +1,50 @@
+<html>
+<head>
+  <title>Clocker.js test file</title>
+</head>
+<body>
+  <dl>
+    <dt>Full clock values:</dt>
+    <dd>
+      <ul>
+        <li data-result="9003000">02:30:03</li>
+        <li data-result="180010250">50:00:10.25</li>
+      </ul>
+    </dd>
+    <dt>Partial clock value:</dt>
+    <dd>
+      <ul>
+        <li data-result="153000">02:33</li>
+        <li data-result="10500">00:10.5</li>
+      </ul>
+    </dd>
+    <dt>Timecount values:</dt>
+    <dd>
+      <ul>
+        <li data-result="11520000">3.2h</li>
+        <li data-result="2700000">45min</li>
+        <li data-result="30000">30s</li>
+        <li data-result="5">5ms</li>
+        <li data-result="12467">12.467</li>
+      </ul>
+    </dd>
+  </dl>
+  <script src="./clocker.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    var els = document.getElementsByTagName('li'),
+        el,
+        time;
+    for ( t in els ) {
+      el = els[t];
+      time = clocker(el.innerText);
+
+      el.innerText += ' : ' + time + 'ms';
+      if ( time == el.getAttribute('data-result') ) {
+        el.style.color = 'green';
+      } else {
+        el.style.color = 'red';
+      }
+    }
+  </script>
+</body>
+</html>
