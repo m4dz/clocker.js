@@ -13,7 +13,7 @@ Follow: [@madsgraphics](http://twitter.com/madsgraphics) on Twitter for more upd
 
 Simply use to `window.clocker` method to get the time in ms :
 
-  var time = clocker('2:30.5');
+    var time = clocker('2:30.5');
 
 Any forks and stuff are welcome =].
 
